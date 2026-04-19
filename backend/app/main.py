@@ -7,12 +7,17 @@ app = FastAPI(
     version=settings.VERSION
 )
 
-# Router base (vacío temporalmente para cumplir el requerimiento estructural)
+from app.api.routes import frases
+
+# Configurar enrutadores
+app.include_router(frases.router, prefix="/api/v1/frases", tags=["frases"])
+
+# Router base para el home
 api_router = APIRouter()
 
 @api_router.get("/")
 def read_root():
-    return {"status": "ok", "message": "Server runing"}
+    return {"status": "ok", "message": "Server running"}
 
 # Incluir router base
 app.include_router(api_router)

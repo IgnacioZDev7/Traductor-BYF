@@ -1,6 +1,9 @@
 from sqlalchemy.orm import Session
 from app.repositories import frase_repository
 
+#alternativa si el pirmer import de frase da problemas
+#import app.repositories.frase_repository as frase_repository
+
 #alternativa de acuerdo a como se resuelva el paquete
 #from app.repositories.frase_repository import (
 #    obtener_frases,
@@ -28,3 +31,10 @@ def buscar_frases_por_texto_service(db: Session, texto: str, limit: int = 50, of
     Retorna una lista de frases (vacía si no hay resultados).
     """
     return frase_repository.buscar_frases_por_texto(db=db, texto=texto, limit=limit, offset=offset)
+
+def obtener_frases_por_categoria_service(db: Session, categoria: str, limit: int = 50, offset: int = 0):
+    """
+    Busca frases que pertenezcan a una categoria dada.
+    Retorna una lista de frases (vacía si no hay resultados).
+    """
+    return frase_repository.obtener_frases_por_categoria(db=db, categoria=categoria, limit=limit, offset=offset)
