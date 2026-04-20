@@ -4,6 +4,10 @@
 
 ---
 
+## ESTADO ACTUAL A 19-04-26
+
+El sistema funciona correctamente, se puede buscar por texto y por categoría, se puede ver el resultado en una lista y se puede ver el detalle de cada frase. Se puede ejecutar el backend con `uvicorn app.main:app --reload` y el frontend con `npm run dev`. Se ha implementado un sistema de permisos CORS para conectar validamente el frontend con el backend en entorno local.
+
 ## 📌 Descripción
 
 **Traductor-BYF** es un sistema web distribuido diseñado para facilitar la comunicación entre personal de salud y pacientes hablantes de **aymara y quechua**, mediante el uso de un catálogo estructurado de frases médicas previamente validadas.
