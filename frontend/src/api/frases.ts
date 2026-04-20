@@ -2,6 +2,7 @@ import type { Frase } from '../types/frase';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1/frases';
 
+
 /**
  * Función auxiliar para realizar peticiones y centralizar el manejo de errores básicos
  */

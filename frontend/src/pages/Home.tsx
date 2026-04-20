@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import type { Frase } from '../types/frase';
 import { obtenerFrases, buscarFrases, obtenerFrasesPorCategoria } from '../api/frases';
 
-import SearchBar from '../components/SearchBar';
 import FilterPanel from '../components/FilterPanel';
 import ResultList from '../components/ResultList';
 
@@ -52,45 +51,106 @@ const Home: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
+
+  // El primer resultado retornado será asumido como la "Traducción Principal" en el display superior
+  const traduccionPrincipal = frases.length > 0 ? frases[0] : null;
+
   return (
-    <div className="home-container" style={{ padding: '2rem 1rem', maxWidth: '1000px', margin: '0 auto' }}>
+    <div className="home-container" style={{ padding: '2rem 1rem', maxWidth: '1100px', margin: '0 auto' }}>
       
       <header className="home-header" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <h1 style={{ color: '#646cff', marginBottom: '0.5rem', fontSize: '2.5rem' }}>Traductor Médico BYF</h1>
-        <p style={{ color: '#888', fontSize: '1.2rem', margin: 0 }}>Aymara - Quechua - Español</p>
+        <h1 style={{ color: 'var(--color-primary-500)', marginBottom: '0.5rem', fontSize: '2.5rem' }}>Traductor Médico BYF</h1>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', margin: 0 }}>Aymara - Quechua - Español</p>
+        
       </header>
 
-      <section className="controls-section" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
-        <SearchBar 
-          value={textoBusqueda}
-          onChange={setTextoBusqueda}
-          onSearch={handleSearch}
-        />
+      {/* BLOQUE PRINCIPAL: Traductor Clínico Dual */}
+      <section className="translator-panel">
+        
+        {/* Lado Izquierdo: Input de Español */}
+        <div className="translator-section translator-section-left">
+          <label className="translator-label">Español</label>
+          <textarea 
+            className="translator-textarea"
+            placeholder="Escriba el síntoma o instrucción médica..."
+            value={textoBusqueda}
+            onChange={(e) => setTextoBusqueda(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <div className="translator-action-bar">
+            <button onClick={handleSearch} disabled={loading}>
+              {loading ? 'Traduciendo...' : 'Traducir'}
+            </button>
+          </div>
+        </div>
+
+        {/* Lado Derecho: Output de Aymara y Quechua */}
+        <div className="translator-section">
+          {loading && (
+            <div className="translator-empty-state" style={{ color: 'var(--color-primary-500)' }}>
+              Procesando traducción...
+            </div>
+          )}
+
+          {error && !loading && (
+            <div className="translator-empty-state" style={{ color: 'var(--color-error)' }}>
+              Oops! {error}
+            </div>
+          )}
+
+          {!loading && !error && !traduccionPrincipal && textoBusqueda.trim() !== '' && (
+            <div className="translator-empty-state">
+              No se encontraron traducciones exactas para el término ingresado.
+            </div>
+          )}
+
+          {!loading && !error && !traduccionPrincipal && textoBusqueda.trim() === '' && (
+            <div className="translator-empty-state">
+              La traducción de la frase aparecerá aquí.
+            </div>
+          )}
+
+          {!loading && !error && traduccionPrincipal && (
+            <div className="translator-results-container">
+              <div className="translator-result-box lang-ay">
+                <span className="translator-label">Aymara</span>
+                <p className="phrase-section-text">{traduccionPrincipal.texto_ay || 'No disponible en Aymara'}</p>
+              </div>
+              
+              <div className="translator-result-box lang-qu">
+                <span className="translator-label">Quechua</span>
+                <p className="phrase-section-text">{traduccionPrincipal.texto_qu || 'No disponible en Quechua'}</p>
+              </div>
+
+              {traduccionPrincipal.categoria && (
+                <div className="translator-metadata">
+                  Categoría: <span style={{ textTransform: 'capitalize' }}>{traduccionPrincipal.categoria}</span>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* BLOQUE SECUNDARIO: Resultados o Historial Auxiliar (Menos Prioritario) */}
+      <section className="additional-content-section">
+        <h2 className="section-title">Contexto Clínico y Resultados Adicionales</h2>
         
         <FilterPanel 
           selectedCategoria={categoriaSeleccionada}
           onSelectCategoria={handleSelectCategoria}
         />
-      </section>
 
-      <main className="home-content">
-        {loading && (
-          <div style={{ textAlign: 'center', padding: '3rem', color: '#646cff' }}>
-            <h2 style={{ margin: 0 }}>Cargando resultados...</h2>
-          </div>
-        )}
-
-        {error && !loading && (
-          <div style={{ textAlign: 'center', padding: '3rem', color: '#ff4646', border: '1px solid #ff4646', borderRadius: '8px', backgroundColor: '#3a1a1a' }}>
-            <h3>Oops! Algo salió mal</h3>
-            <p>{error}</p>
-          </div>
-        )}
-
-        {!loading && !error && (
+        <main className="home-content">
           <ResultList frases={frases} />
-        )}
-      </main>
+        </main>
+      </section>
       
     </div>
   );
