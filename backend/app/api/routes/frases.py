@@ -8,7 +8,7 @@ from app.services import frase_service
 
 router = APIRouter()
 
-@router.get("/", response_model=List[FraseResponse])
+@router.get("", response_model=List[FraseResponse])
 def obtener_frases(limit: int = 50, offset: int = 0, db: Session = Depends(get_db)):
     return frase_service.obtener_frases_service(db=db, limit=limit, offset=offset)
 

@@ -62,12 +62,11 @@ const Home: React.FC = () => {
   const traduccionPrincipal = frases.length > 0 ? frases[0] : null;
 
   return (
-    <div className="home-container" style={{ padding: '2rem 1rem', maxWidth: '1100px', margin: '0 auto' }}>
+    <div className="home-container">
       
-      <header className="home-header" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <h1 style={{ color: 'var(--color-primary-500)', marginBottom: '0.5rem', fontSize: '2.5rem' }}>Traductor Médico BYF</h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', margin: 0 }}>Aymara - Quechua - Español</p>
-        
+      <header className="home-header">
+        <h1 className="home-title">Traductor Médico BYF</h1>
+        <p className="home-subtitle">Aymara - Quechua - Español</p>
       </header>
 
       {/* BLOQUE PRINCIPAL: Traductor Clínico Dual */}

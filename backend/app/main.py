@@ -12,8 +12,10 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        #esta ip puede variar dependiendo de la red
-        "http://[IP_ADDRESS]",
+        # ⬇️ ATENCIÓN: Si cambias de red WiFi mañana, actualiza estas IPs con tu nueva dirección IPv4
+        "http://192.168.0.10:5173",
+        "http://192.168.0.9:5173",
+        "http://192.168.56.1:5173",
     ],
     allow_credentials=True,
     allow_methods=["*"],
