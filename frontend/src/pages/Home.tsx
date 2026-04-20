@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Frase } from '../types/frase';
 import { obtenerFrases, buscarFrases, obtenerFrasesPorCategoria } from '../api/frases';
 
@@ -12,6 +12,9 @@ const Home: React.FC = () => {
   const [frases, setFrases] = useState<Frase[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Referencia para manejar el Debounce de tipado en tiempo real sin dependencias descontroladas
+  const typingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const envolverPeticion = async (peticion: () => Promise<Frase[]>) => {
     setLoading(true);
@@ -27,12 +30,12 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    // Carga inicial pasiva
     envolverPeticion(() => obtenerFrases());
   }, []);
 
   const handleSearch = () => {
-    setCategoriaSeleccionada(null);
-
+    setCategoriaSeleccionada(null); // Al forzar búsqueda, anular filtros visuales
     if (textoBusqueda.trim() !== '') {
       envolverPeticion(() => buscarFrases(textoBusqueda));
     } else {
@@ -40,7 +43,28 @@ const Home: React.FC = () => {
     }
   };
 
+  // UX: Búsqueda en tiempo real (Debounced)
+  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setTextoBusqueda(value);
+    setCategoriaSeleccionada(null);
+
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current);
+    }
+
+    typingTimeoutRef.current = setTimeout(() => {
+      if (value.trim() !== '') {
+        envolverPeticion(() => buscarFrases(value));
+      } else {
+        envolverPeticion(() => obtenerFrases());
+      }
+    }, 500); // 500ms debounce
+  };
+
   const handleSelectCategoria = (cat: string | null) => {
+    if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+
     setTextoBusqueda('');
     setCategoriaSeleccionada(cat);
 
@@ -51,15 +75,17 @@ const Home: React.FC = () => {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSearch();
-    }
+  const handleClear = () => {
+    if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+    setTextoBusqueda('');
+    setCategoriaSeleccionada(null);
+    setError(null);
+    envolverPeticion(() => obtenerFrases()); // Regresar a glosario default
   };
 
-  // El primer resultado retornado será asumido como la "Traducción Principal" en el display superior
-  const traduccionPrincipal = frases.length > 0 ? frases[0] : null;
+  // Nulifica la traducción principal frente a usuarios que dejan todos los inputs vacíos, a fin de no secuestrar visualmente la app con el index 0 de la BD
+  const isBuscando = textoBusqueda.trim() !== '' || categoriaSeleccionada !== null;
+  const traduccionPrincipal = isBuscando && frases.length > 0 ? frases[0] : null;
 
   return (
     <div className="home-container">
@@ -79,44 +105,58 @@ const Home: React.FC = () => {
             className="translator-textarea"
             placeholder="Escriba el síntoma o instrucción médica..."
             value={textoBusqueda}
-            onChange={(e) => setTextoBusqueda(e.target.value)}
-            onKeyDown={handleKeyDown}
+            onChange={handleTextChange}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleSearch();
+              }
+            }}
           />
           <div className="translator-action-bar">
+            <button 
+              className="btn-secondary" 
+              onClick={handleClear}
+              disabled={loading || (!isBuscando && error === null)}
+            >
+              Limpiar
+            </button>
             <button onClick={handleSearch} disabled={loading}>
-              {loading ? 'Traduciendo...' : 'Traducir'}
+              Traducir
             </button>
           </div>
         </div>
 
-        {/* Lado Derecho: Output de Aymara y Quechua */}
+        {/* Lado Derecho: Output Fluido */}
         <div className="translator-section">
-          {loading && (
-            <div className="translator-empty-state" style={{ color: 'var(--color-primary-500)' }}>
-              Procesando traducción...
-            </div>
-          )}
-
-          {error && !loading && (
+          
+          {error && (
             <div className="translator-empty-state" style={{ color: 'var(--color-error)' }}>
               Oops! {error}
             </div>
           )}
 
-          {!loading && !error && !traduccionPrincipal && textoBusqueda.trim() !== '' && (
+          {!error && !traduccionPrincipal && textoBusqueda.trim() === '' && !loading && (
+            <div className="translator-empty-state">
+              Escribe una frase en español para ver la traducción.
+            </div>
+          )}
+
+          {!error && !traduccionPrincipal && loading && (
+            <div className="translator-empty-state" style={{ color: 'var(--color-primary-500)' }}>
+              Traduciendo consulta...
+            </div>
+          )}
+
+          {!error && !traduccionPrincipal && !loading && textoBusqueda.trim() !== '' && (
             <div className="translator-empty-state">
               No se encontraron traducciones exactas para el término ingresado.
             </div>
           )}
 
-          {!loading && !error && !traduccionPrincipal && textoBusqueda.trim() === '' && (
-            <div className="translator-empty-state">
-              La traducción de la frase aparecerá aquí.
-            </div>
-          )}
-
-          {!loading && !error && traduccionPrincipal && (
-            <div className="translator-results-container">
+          {/* Renderizado con 'Fade' suave para realismo en tiempo real */}
+          {!error && traduccionPrincipal && (
+            <div className={`translator-results-container ${loading ? 'is-translating' : ''}`}>
               <div className="translator-result-box lang-ay">
                 <span className="translator-label">Aymara</span>
                 <p className="phrase-section-text">{traduccionPrincipal.texto_ay || 'No disponible en Aymara'}</p>
@@ -137,7 +177,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* BLOQUE SECUNDARIO: Resultados o Historial Auxiliar (Menos Prioritario) */}
+      {/* BLOQUE SECUNDARIO: Resultados o Historial Auxiliar */}
       <section className="additional-content-section">
         <h2 className="section-title">Contexto Clínico y Resultados Adicionales</h2>
         

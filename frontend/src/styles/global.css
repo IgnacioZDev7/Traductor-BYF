@@ -355,12 +355,12 @@ button:disabled {
 
 .translator-textarea {
   flex: 1;
-  min-height: 80px; /* UX: reducir ocupación excesiva móvil */
+  min-height: 80px; 
   resize: vertical;
   background: transparent;
   border: none;
-  color: var(--text-primary);
-  font-size: 1.15rem; /* UX: mejor lectura en móviles */
+  color: var(--text-secondary); /* UX: Menos protagonismo al input para priorizar salida */
+  font-size: 1.05rem; 
   padding: 0;
   outline: none;
 }
@@ -368,7 +368,7 @@ button:disabled {
 @media (min-width: 768px) {
   .translator-textarea {
     min-height: 150px;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -376,16 +376,31 @@ button:disabled {
   box-shadow: none;
   border: none;
   background-color: transparent;
+  color: var(--text-primary); /* UX: Al ganar foco, resalta ligeramente */
 }
 
 .translator-action-bar {
   display: flex;
   justify-content: flex-end;
+  gap: var(--space-2);
   margin-top: var(--space-2);
 }
 
-/* UX: Botón gigante fácil de interactuar en móvil */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
 @media (max-width: 767px) {
+  .translator-action-bar {
+    flex-direction: column-reverse; /* UX Móvil: Poner Limpiar abajo para no equivocarse al hacer tap en Traducir */
+  }
   .translator-action-bar button {
     width: 100%;
   }
@@ -394,9 +409,9 @@ button:disabled {
 .translator-result-box {
   background-color: var(--bg-base);
   border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4); /* UX: compactado verticalmente */
+  padding: var(--space-3) var(--space-4); 
   margin-bottom: var(--space-3);
-  border-left: 3px solid transparent;
+  border-left: 4px solid transparent; /* UX: Borde sutilmente mas grueso para lectura */
 }
 
 .translator-result-box.lang-ay {
@@ -404,12 +419,21 @@ button:disabled {
 }
 
 .translator-result-box.lang-qu {
-  border-left-color: var(--color-error); /* Contraste Quechua */
+  border-left-color: var(--color-error);
 }
 
-/* UX: tipografía de salida mejorada en base la densidad del espacio */
 .translator-result-box .phrase-section-text {
-  font-size: 1.1rem;
+  font-size: 1.35rem; /* UX: Gigante y protagónico, prioridad total */
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .translator-result-box .phrase-section-text {
+    font-size: 1.7rem; /* UX: Aún más dominancia en escritorio */
+  }
 }
 
 .translator-empty-state {
@@ -427,6 +451,12 @@ button:disabled {
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: opacity 0.3s ease; /* UX: Soft crossfade para el Debounce */
+}
+
+.translator-results-container.is-translating {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .translator-metadata {
