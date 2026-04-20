@@ -27,17 +27,13 @@ const Home: React.FC = () => {
     }
   };
 
-  // Efecto principal reservado estrictamente para la carga inicial (Mount)
   useEffect(() => {
     envolverPeticion(() => obtenerFrases());
   }, []);
 
-  // Manejador del buscador (botón o 'Enter')
   const handleSearch = () => {
-    // Al realizar una búsqueda por texto, limpiamos el filtro visual de categoría
     setCategoriaSeleccionada(null);
 
-    // Dependiendo del input, realizamos la petición respectiva
     if (textoBusqueda.trim() !== '') {
       envolverPeticion(() => buscarFrases(textoBusqueda));
     } else {
@@ -45,13 +41,10 @@ const Home: React.FC = () => {
     }
   };
 
-  // Interceptor para el panel de categorías
   const handleSelectCategoria = (cat: string | null) => {
-    // Limpiamos visualmente el texto de búsqueda al tocar paneles
     setTextoBusqueda('');
     setCategoriaSeleccionada(cat);
 
-    // Y delegamos directamente la petición explícitamente sin depender de un useEffect
     if (cat !== null) {
       envolverPeticion(() => obtenerFrasesPorCategoria(cat));
     } else {
@@ -62,13 +55,11 @@ const Home: React.FC = () => {
   return (
     <div className="home-container" style={{ padding: '2rem 1rem', maxWidth: '1000px', margin: '0 auto' }}>
       
-      {/* Cabecera / Títulos */}
       <header className="home-header" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
         <h1 style={{ color: '#646cff', marginBottom: '0.5rem', fontSize: '2.5rem' }}>Traductor Médico BYF</h1>
         <p style={{ color: '#888', fontSize: '1.2rem', margin: 0 }}>Aymara - Quechua - Español</p>
       </header>
 
-      {/* Controles de Filtros y Búsqueda */}
       <section className="controls-section" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
         <SearchBar 
           value={textoBusqueda}
@@ -82,7 +73,6 @@ const Home: React.FC = () => {
         />
       </section>
 
-      {/* Área de Resultados y Estados de Carga/Error */}
       <main className="home-content">
         {loading && (
           <div style={{ textAlign: 'center', padding: '3rem', color: '#646cff' }}>

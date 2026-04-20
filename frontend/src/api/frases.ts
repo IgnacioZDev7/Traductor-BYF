@@ -1,7 +1,6 @@
 import type { Frase } from '../types/frase';
 
-//para el despliegue hay que mover la url a una variable de entorno
-const API_BASE_URL = 'http://localhost:8000/api/v1/frases';
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1/frases';
 
 /**
  * Función auxiliar para realizar peticiones y centralizar el manejo de errores básicos
