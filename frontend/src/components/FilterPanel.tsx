@@ -15,6 +15,16 @@ const CATEGORIAS = [
   'tratamiento'
 ];
 
+const ETIQUETAS: Record<string, string> = {
+  comunicacion: "Comunicación básica",
+  antecedentes: "Antecedentes",
+  sintomas: "Síntomas",
+  exploracion: "Exploración física",
+  laboratorio: "Laboratorio",
+  farmacia: "Farmacia",
+  tratamiento: "Tratamiento"
+};
+
 const FilterPanel: React.FC<FilterPanelProps> = ({
   selectedCategoria,
   onSelectCategoria,
@@ -29,18 +39,18 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
 
   return (
     <div className="filterpanel-container">
-      {CATEGORIAS.map((cat) => {
-        const isSelected = selectedCategoria === cat;
-        return (
-          <button
-            key={cat}
-            onClick={() => handleCategoryClick(cat)}
-            className={`filter-button ${isSelected ? 'selected' : ''}`}
-          >
-            {cat}
-          </button>
-        );
-      })}
+        {CATEGORIAS.map((cat) => {
+          const isSelected = selectedCategoria === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => handleCategoryClick(cat)}
+              className={`filter-button ${isSelected ? 'selected' : ''}`}
+            >
+              {ETIQUETAS[cat] || cat}
+            </button>
+          );
+        })}
     </div>
   );
 };

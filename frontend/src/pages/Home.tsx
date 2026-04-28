@@ -87,10 +87,31 @@ const Home: React.FC = () => {
   const isBuscando = textoBusqueda.trim() !== '' || categoriaSeleccionada !== null;
   const traduccionPrincipal = isBuscando && frases.length > 0 ? frases[0] : null;
 
+  // Manejo de Tema Claro/Oscuro persistente
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
+  });
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <div className="home-container">
       
-      <header className="home-header">
+      <header className="home-header" style={{ position: 'relative' }}>
+        <button 
+          onClick={toggleTheme}
+          className="btn-secondary"
+          style={{ position: 'absolute', top: '-10px', right: 0, padding: '0.25rem 0.75rem', fontSize: '0.85rem' }}
+        >
+          {theme === 'dark' ? '☀️ Claro' : '🌙 Oscuro'}
+        </button>
         <h1 className="home-title">Traductor Médico BYF</h1>
         <p className="home-subtitle">Aymara - Quechua - Español</p>
       </header>
@@ -179,7 +200,7 @@ const Home: React.FC = () => {
 
       {/* BLOQUE SECUNDARIO: Resultados o Historial Auxiliar */}
       <section className="additional-content-section">
-        <h2 className="section-title">Contexto Clínico y Resultados Adicionales</h2>
+        <h2 className="section-title">Filtrar por contexto clínico</h2>
         
         <FilterPanel 
           selectedCategoria={categoriaSeleccionada}
@@ -187,7 +208,13 @@ const Home: React.FC = () => {
         />
 
         <main className="home-content">
-          <ResultList frases={frases} />
+          {isBuscando ? (
+            <ResultList frases={frases} />
+          ) : (
+            <div className="empty-results" style={{ marginTop: 'var(--space-4)', padding: 'var(--space-6)' }}>
+              <p>Escribe una frase o selecciona un contexto clínico para ver resultados relacionados.</p>
+            </div>
+          )}
         </main>
       </section>
       

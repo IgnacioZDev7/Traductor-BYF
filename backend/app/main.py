@@ -1,7 +1,7 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-
+    
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION
@@ -13,9 +13,10 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         # ⬇️ ATENCIÓN: Si cambias de red WiFi mañana, actualiza estas IPs con tu nueva dirección IPv4
-        "http://192.168.0.10:5173",
-        "http://192.168.0.9:5173",
-        "http://192.168.56.1:5173",
+        #"http://192.168.0.10:5173",
+        #"http://192.168.0.9:5173",
+        #"http://192.168.56.1:5173",
+        #"http://10.0.1.223:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],

@@ -50,6 +50,19 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
 }
 
+/* Tema Claro Override */
+body[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --border-color: #e2e8f0;
+}
+
 /* =========================================
    GLOBAL RESET & BASE
    ========================================= */
@@ -188,6 +201,12 @@ button:disabled {
   border-radius: var(--radius-full);
   text-transform: capitalize;
   font-weight: 400; /* reset weight */
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-button:hover {
+  background-color: var(--bg-surface-hover);
+  color: var(--text-primary);
 }
 
 .filter-button.selected {
@@ -195,6 +214,11 @@ button:disabled {
   border-color: var(--color-primary-500);
   color: #ffffff;
   font-weight: 600;
+}
+
+.filter-button.selected:hover {
+  background-color: var(--color-primary-600);
+  color: #ffffff;
 }
 
 /* PhraseCard */
