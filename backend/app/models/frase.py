@@ -12,6 +12,4 @@ class Frase(Base):
     texto_ay = Column(Text)
     texto_qu = Column(Text)
     seccion = Column(String)
-    requiere_revision = Column(Boolean)
     candidato_audio = Column(Boolean)
-    estado = Column(String)

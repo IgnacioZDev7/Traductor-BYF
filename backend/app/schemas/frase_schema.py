@@ -10,9 +10,7 @@ class FraseBase(BaseModel):
     texto_ay: Optional[str] = None
     texto_qu: Optional[str] = None
     seccion: Optional[str] = None
-    requiere_revision: Optional[bool] = None
     candidato_audio: Optional[bool] = None
-    estado: Optional[str] = None
 
 class FraseResponse(FraseBase):
     model_config = ConfigDict(from_attributes=True)
