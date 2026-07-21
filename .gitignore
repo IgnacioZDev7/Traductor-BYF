@@ -23,3 +23,20 @@ backend/.env
 
 # Logs
 *.log
+
+# Dependencias (NUNCA subir node_modules)
+node_modules/
+
+# Builds de frontend
+dist/
+dist-ssr/
+*.local
+
+# Cache de Vite
+.vite/
+
+# Tooling local (registro de skills, etc.)
+.atl/
+
+# CSV roto de Excel (1M filas vacías; usar frases1.csv)
+docs/traducciones/frases.csv
