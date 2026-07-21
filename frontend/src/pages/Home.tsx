@@ -5,9 +5,12 @@ import { obtenerFrases, buscarFrases, obtenerFrasesPorCategoria } from '../api/f
 import FilterPanel from '../components/FilterPanel';
 import ResultList from '../components/ResultList';
 
+import BodyPartsModal from '../components/BodyPartsModal';
+
 const Home: React.FC = () => {
   const [textoBusqueda, setTextoBusqueda] = useState<string>('');
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState<string | null>(null);
+  const [isBodyModalOpen, setIsBodyModalOpen] = useState<boolean>(false);
   
   const [frases, setFrases] = useState<Frase[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -200,7 +203,12 @@ const Home: React.FC = () => {
 
       {/* BLOQUE SECUNDARIO: Resultados o Historial Auxiliar */}
       <section className="additional-content-section">
-        <h2 className="section-title">Filtrar por contexto clínico</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '2px solid var(--border-color)', paddingBottom: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
+          <h2 className="section-title" style={{ borderBottom: 'none', margin: 0, padding: 0 }}>Filtrar por contexto clínico</h2>
+          <button className="btn-secondary" onClick={() => setIsBodyModalOpen(true)} style={{ fontSize: '0.85rem', padding: '0.5rem 1rem', marginTop: '10px' }}>
+            🧍 Ver partes del cuerpo
+          </button>
+        </div>
         
         <FilterPanel 
           selectedCategoria={categoriaSeleccionada}
@@ -218,6 +226,7 @@ const Home: React.FC = () => {
         </main>
       </section>
       
+      <BodyPartsModal isOpen={isBodyModalOpen} onClose={() => setIsBodyModalOpen(false)} />
     </div>
   );
 };

@@ -542,3 +542,337 @@ button:disabled {
     font-size: 1.2rem;
   }
 }
+
+/* =========================================
+   MODAL - BODY PARTS
+   ========================================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.modal-content {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modal-in 0.3s ease-out;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  margin: 0 0 var(--space-1);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.modal-subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.modal-close {
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0 var(--space-2);
+}
+
+.modal-close:hover {
+  background: transparent;
+  color: var(--color-error);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .modal-body {
+    flex-direction: row;
+    height: 500px;
+  }
+}
+
+.modal-svg-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background-color: var(--bg-base);
+}
+
+.human-silhouette {
+  height: 350px;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .human-silhouette {
+    height: 100%;
+  }
+}
+
+.body-part {
+  fill: var(--bg-surface-hover);
+  stroke: var(--border-color);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.body-part:hover {
+  fill: var(--color-primary-400);
+}
+
+.body-part.selected {
+  fill: var(--color-primary-500);
+  stroke: var(--text-primary);
+}
+
+.modal-info-panel {
+  flex: 1;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.lang-tab {
+  flex: 1;
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.lang-tab.active {
+  background-color: var(--color-primary-500);
+  color: white;
+  border-color: var(--color-primary-500);
+}
+
+.part-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.part-es {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.part-lang-box {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-base);
+  border-left: 4px solid transparent;
+}
+
+.part-lang-box.lang-ay {
+  border-left-color: var(--color-primary-500);
+}
+
+.part-lang-box.lang-qu {
+  border-left-color: var(--color-error);
+}
+
+.part-lang-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.part-lang-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.part-empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: var(--space-8);
+  font-size: 1.1rem;
+}
+
+/* ---- Diagrama anatómico de partes del cuerpo ---- */
+.bodycmp-stage {
+  min-height: 380px;
+}
+
+.body-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  padding: var(--space-4) var(--space-6) 0;
+}
+
+.body-toggle-group {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.body-toggle {
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+}
+
+.body-toggle.active {
+  background-color: var(--color-primary-500);
+  color: white;
+  border-color: var(--color-primary-500);
+}
+
+/* Escenario: centra el diagrama; los marcadores se posicionan sobre .body-figure */
+.body-stage {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Caja que calca exactamente el SVG del cuerpo (alto 100%, ancho por aspecto).
+   Así el % de los marcadores mapea linealmente al viewBox del modelo. */
+.body-figure {
+  position: relative;
+  height: 100%;
+}
+
+.body-figure > svg,
+.body-figure > img {
+  height: 100% !important;
+  width: auto !important;
+  display: block;
+}
+
+/* Imagen de detalle (cara generada) enmarcada */
+.ro-image {
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
+/* Contornos propios de las vistas de detalle (cara / mano) */
+.ro-skin {
+  fill: var(--bg-surface-hover);
+  stroke: var(--border-color);
+  stroke-width: 2;
+}
+
+.ro-hair {
+  fill: var(--border-color);
+  stroke: none;
+}
+
+.ro-line {
+  fill: none;
+  stroke: var(--text-secondary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.ro-line-fill {
+  fill: var(--text-secondary);
+  stroke: none;
+}
+
+.ro-skin-dark {
+  fill: var(--bg-base);
+  stroke: var(--border-color);
+  stroke-width: 2;
+}
+
+.ro-eye {
+  fill: var(--bg-base);
+  stroke: var(--text-secondary);
+  stroke-width: 1.5;
+}
+
+.ro-pupil {
+  fill: var(--text-secondary);
+  stroke: none;
+}
+
+.body-marker {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--color-primary-400);
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px var(--border-color);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.body-marker:hover,
+.body-marker:focus-visible {
+  background-color: var(--color-primary-500);
+  transform: translate(-50%, -50%) scale(1.25);
+  outline: none;
+}
+
+.body-marker.selected {
+  background-color: var(--color-error);
+  transform: translate(-50%, -50%) scale(1.3);
+}
