@@ -1,0 +1,157 @@
+id;categoria;subcategoria;tipo;texto_español;texto_aymara;texto_quechua;seccion_origen;requiere_revision;candidato_audio;estado
+PHR-0001;comunicacion;presentacion;respuesta;Yo soy el doctor/la doctora;Nayax qullirïtwa;Ñuqaqa doctormi kani..;comunicacion;FALSE;TRUE;borrador
+PHR-0002;comunicacion;idioma;respuesta;Yo hablo poquito Aymara;Nayax mä juk’it aymar parlastwa;Aymarata pisillatam rimani;comunicacion;FALSE;TRUE;borrador
+PHR-0003;comunicacion;instrucciones;instruccion;Cuando te pregunte me vas a decir si o me vas a decir no;Jiskt’äma ukhax, jïsa sitätawa jan ukax janiwa sitätawa;Tapuptiyqa, ¿arí niwankichu icha manachu niwanki?;comunicacion;FALSE;TRUE;borrador
+PHR-0004;comunicacion;confirmacion;pregunta;¿Sí?;¿Jïsa?;Arí?;comunicacion;FALSE;TRUE;borrador
+PHR-0005;comunicacion;confirmacion;pregunta;¿No?;¿Janiti?;Mana?;comunicacion;FALSE;TRUE;borrador
+PHR-0006;comunicacion;identificacion;pregunta;¿Cómo te llamas?;¿Sutimax kunasa?;Imataq sutiyki?;comunicacion;FALSE;TRUE;borrador
+PHR-0007;comunicacion;identificacion;pregunta;¿Cuántos años tienes?;Kawqha maranitasa?;Hayka watayuqtaq kanki?;comunicacion;FALSE;TRUE;borrador
+PHR-0008;comunicacion;comprension;pregunta;¿Comprendiste todo?;¿Taqi kunsa amuyawaytati?;¿Tukuy imatachu entienderqanki?;comunicacion;FALSE;TRUE;borrador
+PHR-0009;comunicacion;comprension;respuesta;Sí entendí;Jisa nayajj amuyasta;Arí entienderqanim;comunicacion;FALSE;TRUE;borrador
+PHR-0010;comunicacion;comprension;respuesta;No entendí;Nayajj janiw amuykayätti;Manam entienderqanichu;comunicacion;FALSE;TRUE;borrador
+PHR-0011;comunicacion;consulta;pregunta;¿Tiene alguna pregunta?;¿Kuna jisktʼanakas utji?;¿Ima tapukuyniykipas kanchu?;comunicacion;FALSE;TRUE;borrador
+PHR-0012;comunicacion;consulta;respuesta;Sí tengo una pregunta;Nayax mä jiskt’äwinïtwa;Sichus tapukuyniy kanman chayqa;comunicacion;FALSE;TRUE;borrador
+PHR-0013;comunicacion;consulta;respuesta;No, ninguna pregunta;Janiwa, janiw jiskt’asiñas utjkiti;Mana mana tapukuykuna;comunicacion;FALSE;TRUE;borrador
+PHR-0014;comunicacion;repeticion;pregunta;¿Le repito algo?;¿Kunsa mayamp mayamp lurañaja?;¿Imatapas yapamanta rimasac?;comunicacion;FALSE;TRUE;borrador
+PHR-0015;farmacia;dosis;pregunta;¿Cuándo debo tomar?;¿Kunapachas umañajaxa?;¿Hayka hampikunatataq upyanay?;comunicacion;FALSE;TRUE;borrador
+PHR-0016;farmacia;dosis;pregunta;¿Cómo debo tomar?;¿Kunjamsa apsuñaja?;¿Imaynatataq hampita upyanay?;comunicacion;FALSE;TRUE;borrador
+PHR-0017;farmacia;dosis;pregunta;¿Qué tengo que tomar?;¿Kunsa nayajj apasiñaja?;¿Ima hampikunatataq upyanay?;comunicacion;FALSE;TRUE;borrador
+PHR-0018;comunicacion;apoyo;pregunta;¿Necesita algo más?;¿Yaqhanak munasmati?;¿Imatapas necesitankichu?;comunicacion;FALSE;TRUE;borrador
+PHR-0019;comunicacion;confirmacion;opcion;Sí;Jisa;Arí;comunicacion;FALSE;TRUE;borrador
+PHR-0020;comunicacion;confirmacion;opcion;No;Janiwa;Mana;comunicacion;FALSE;TRUE;borrador
+PHR-0021;comunicacion;cortesia;respuesta;Gracias;Pay suma;Añay;comunicacion;FALSE;TRUE;borrador
+PHR-0022;comunicacion;despedida;respuesta;Hasta luego;Ukat jikisiñani;Asllakama;comunicacion;FALSE;TRUE;borrador
+PHR-0023;comunicacion;despedida;respuesta;Que le vaya bien;Taqi kunas sum sarañapataki suyt’añani;Suyakuy tukuy imapas allinta purinata;comunicacion;FALSE;TRUE;borrador
+PHR-0024;comunicacion;cuidado;instruccion;Tiene que cuidarse;Juma pachpaw sum uñjasiñama;Kikiykitam cuidakunayki;comunicacion;FALSE;TRUE;borrador
+PHR-0025;comunicacion;despedida;respuesta;Que tenga buen día;Aski uru churätam;Campaj alin punchau;comunicacion;FALSE;TRUE;borrador
+PHR-0026;antecedentes;habitos;pregunta;¿Fumas?;¿Pitirïtati?;¿Qamchu cigarrota pitanki?;antecedentes;FALSE;TRUE;borrador
+PHR-0027;antecedentes;habitos;pregunta;¿Tomas bebidas alcohólicas?;¿Machañ umañanak umirïtati?;¿Machaytachu ukyanki?;antecedentes;FALSE;TRUE;borrador
+PHR-0028;antecedentes;entorno_familiar;pregunta;¿En tu casa hay personas que tosen?;¿Utaman ujump usutanakax utjiti?;¿Kanchu wasiykipi tosaq runakuna?;antecedentes;TRUE;TRUE;borrador
+PHR-0029;antecedentes;medicacion;pregunta;¿Tomas medicamentos?;¿Qullanak umirïtati?;¿Hampikunatachu tomanki?;antecedentes;FALSE;TRUE;borrador
+PHR-0030;antecedentes;medicacion;pregunta;¿Qué medicamentos?;¿Kawkïr qullanaka?;¿Hampikunatachu tomanki?;antecedentes;TRUE;TRUE;borrador
+PHR-0031;antecedentes;enfermedades_previas;pregunta;¿Has estado enfermo de diabetes?;¿Diabetes usump usuntirïtati?;¿Diabetes onqoywanchu onqorqanki?;antecedentes;FALSE;TRUE;borrador
+PHR-0032;antecedentes;cicatrizacion;pregunta;¿Cuándo te cortas sana bien?;¿Janch khart’asktä ukhax sumakit jaktam?;¿Allintachu qhaliyapun?;antecedentes;TRUE;TRUE;borrador
+PHR-0033;antecedentes;entorno_familiar;pregunta;¿En tu casa hay alguien enfermo?;¿Utaman usutax utjiti?;¿Wasiykipi pipas unquq kanchu?;antecedentes;FALSE;TRUE;borrador
+PHR-0034;antecedentes;entorno_familiar;pregunta;¿De qué está enfermo?;¿Kunat usutasa?;¿Imawantaq unquchkan?;antecedentes;FALSE;TRUE;borrador
+PHR-0035;sintomas;tiempo;pregunta;¿Desde cuándo?;¿Kunapachata?;¿Hayk’aqmantapacha?;sintomas;FALSE;TRUE;borrador
+PHR-0036;sintomas;tiempo;pregunta;¿Cuántos días?;¿Qawqha urunaka?;¿Hayka punchawtaq?;sintomas;FALSE;TRUE;borrador
+PHR-0037;sintomas;tiempo;pregunta;¿Un rato?;¿Mä juk’a pachakiti?;¿Huk ratulla?;sintomas;FALSE;TRUE;borrador
+PHR-0038;sintomas;tiempo;pregunta;¿Un día?;¿Mä uruti?;¿Huk punchawchu?;sintomas;FALSE;TRUE;borrador
+PHR-0039;sintomas;tiempo;pregunta;¿Dos días?;¿Pä uruti?;¿Iskay punchaw?;sintomas;FALSE;TRUE;borrador
+PHR-0040;sintomas;tiempo;pregunta;¿Tres días?;¿Kimsa uruti?;¿Kimsa punchaw?;sintomas;FALSE;TRUE;borrador
+PHR-0041;sintomas;tiempo;pregunta;¿Una semana?;¿Mä paqüruti?;¿Huk semanachu?;sintomas;FALSE;TRUE;borrador
+PHR-0042;sintomas;tiempo;pregunta;¿Dos semanas?;¿Pä paqüruti?;¿Iskay semanachu?;sintomas;FALSE;TRUE;borrador
+PHR-0043;sintomas;tiempo;pregunta;¿Un mes?;¿Mä phaxsiti?;¿Huk killachu?;sintomas;FALSE;TRUE;borrador
+PHR-0044;sintomas;tiempo;pregunta;¿Dos meses?;¿Pä phaxsiti?;¿Iskay killa?;sintomas;FALSE;TRUE;borrador
+PHR-0045;sintomas;tiempo;pregunta;¿Un año?;¿Mä marati?;¿Huk watachu?;sintomas;FALSE;TRUE;borrador
+PHR-0046;sintomas;tiempo;pregunta;¿Dos años?;¿Pä marati?;¿Iskay wata?;sintomas;FALSE;TRUE;borrador
+PHR-0047;sintomas;tiempo;pregunta;¿Varios años?;¿Walja maranakati?;¿Achka watakuna?;sintomas;FALSE;TRUE;borrador
+PHR-0048;sintomas;tiempo;pregunta;¿Cuándo empezó?;¿Kunapachats qallti?;¿Hayk’aqmi qallarirqan?;sintomas;FALSE;TRUE;borrador
+PHR-0049;sintomas;tiempo_dia;pregunta;¿A qué hora del día?;¿Kuna horasarus urunxa?;¿Ima horapitaq?;sintomas;FALSE;TRUE;borrador
+PHR-0050;sintomas;tiempo_dia;pregunta;¿Al amanecer?;¿Willjtaruti?;¿Achikyaypi?;sintomas;FALSE;TRUE;borrador
+PHR-0051;sintomas;tiempo_dia;pregunta;¿En la mañana?;¿Alwati?;Tutamanta?;sintomas;TRUE;TRUE;borrador
+PHR-0052;sintomas;tiempo_dia;pregunta;¿Al mediodía?;¿Chika ururuti?;Chawpi punchawpi?;sintomas;FALSE;TRUE;borrador
+PHR-0053;sintomas;tiempo_dia;pregunta;¿En la tarde?;¿Jayp’utuqiruti?;¿Tardetachu?;sintomas;TRUE;TRUE;borrador
+PHR-0054;sintomas;tiempo_dia;pregunta;¿Al anochecer?;¿Arumthapiruti?;¿Ch’isiyaypichu?;sintomas;FALSE;TRUE;borrador
+PHR-0055;sintomas;tiempo_dia;pregunta;¿En la noche?;¿Arumati?;Tutapi?;sintomas;FALSE;TRUE;borrador
+PHR-0056;sintomas;tiempo_dia;pregunta;¿Todo el día?;¿Urpachati?;¿Tukuy punchawchu?;sintomas;FALSE;TRUE;borrador
+PHR-0057;sintomas;dolor;pregunta;¿Te está doliendo?;¿Ususktamti?;¿K’irichisunkichu?;sintomas;TRUE;TRUE;borrador
+PHR-0058;sintomas;dolor;pregunta;¿Qué te duele?;¿Kunas ustamxa?;¿Imataq k’irisunki?;sintomas;FALSE;TRUE;borrador
+PHR-0059;sintomas;dolor;pregunta;¿Desde cuándo te duele?;¿Kunapachats ustamxa?;¿Hayk’aqmantapachan k’irisunki?;sintomas;FALSE;TRUE;borrador
+PHR-0060;sintomas;dolor;pregunta;¿Cuánto tiempo te duele?;¿T’ajax qawch’apachaxisa?;¿Hayk’aqkamataq nanawan?;sintomas;TRUE;TRUE;borrador
+PHR-0061;sintomas;dolor;pregunta;¿Ha calmado?;¿Samarxtamti?;¿Hawkayarunñachu?;sintomas;TRUE;TRUE;borrador
+PHR-0062;sintomas;dolor;pregunta;¿Ha aumentado?;¿Juk’ampit ustamxa?;¿Astasqachu?;sintomas;TRUE;TRUE;borrador
+PHR-0063;sintomas;dolor;pregunta;¿Te duele la cabeza?;¿P’iqix ustamti?;¿Umayki nananchu?;sintomas;FALSE;TRUE;borrador
+PHR-0064;sintomas;dolor;pregunta;¿Te duele en el cuello?;¿Kunkax ustamti?;¿Kunkayki nananchu?;sintomas;FALSE;TRUE;borrador
+PHR-0065;sintomas;general;pregunta;¿Tienes fiebre?;¿Chhuju usunïtati?;¿Fiebreyuqchu kanki?;sintomas;FALSE;TRUE;borrador
+PHR-0066;sintomas;general;pregunta;¿Tienes escalofríos?;¿Thäjump’inïtati?;¿Chirichiyuqchu kanki?;sintomas;FALSE;TRUE;borrador
+PHR-0067;sintomas;general;pregunta;¿Sudas en la noche?;¿Arumax jump’tati?;¿Tutachu sudanki?;sintomas;FALSE;TRUE;borrador
+PHR-0068;sintomas;general;pregunta;¿Estás comiendo bien?;¿Walikt manq’asiskta?;¿Allintachu mikhushanki?;sintomas;TRUE;TRUE;borrador
+PHR-0069;sintomas;general;pregunta;¿Has enflaquecido?;¿Tuxunttati?;¿Llampuñachu kanki?;sintomas;TRUE;TRUE;borrador
+PHR-0070;sintomas;general;pregunta;¿Estás durmiendo bien?;¿Walikit ikiskta?;¿Allintachu puñuchkanki?;sintomas;TRUE;TRUE;borrador
+PHR-0071;sintomas;general;pregunta;¿Sientes escozor?;¿Jastamti?;¿Picazón sientenkichu?;sintomas;TRUE;TRUE;borrador
+PHR-0072;sintomas;respiratorio;pregunta;¿Estás tosiendo?;¿Ujumpïtati?;¿Tosaqchu kachkanki?;sintomas;TRUE;TRUE;borrador
+PHR-0073;sintomas;respiratorio;pregunta;¿Desde cuándo estás tosiendo?;¿Kunapachats ujta?;¿Hayk’aqmantapachan tosashanki?;sintomas;TRUE;TRUE;borrador
+PHR-0074;sintomas;respiratorio;pregunta;¿Te duele el pecho al toser?;¿Ujktä ukhax lluquchuymax ustamti?;¿Toskuspayki sinqayki nananchu?;sintomas;TRUE;TRUE;borrador
+PHR-0075;sintomas;respiratorio;pregunta;¿Estás escupiendo flemas cuando toses?;¿Ujktä ukhax jurmallawsanak thustati?;¿Toskuspaqa flematachu thuqachkanki?;sintomas;TRUE;TRUE;borrador
+PHR-0076;sintomas;respiratorio;pregunta;¿No puedes respirar?;¿Janit samsuñ atkta?;¿Manachu samayta atinki?;sintomas;TRUE;TRUE;borrador
+PHR-0077;sintomas;digestivo;pregunta;¿Cómo era la diarrea?;¿Wich’ux kunjamänsa?;¿Imaynataq chay diarrea karqa?;sintomas;TRUE;TRUE;borrador
+PHR-0078;sintomas;digestivo;pregunta;¿No has podido defecar?;¿Janit jumanakax defecañ puedipkta?;¿Manachu defecakuyta atirqanki?;sintomas;TRUE;TRUE;borrador
+PHR-0079;sintomas;digestivo;pregunta;¿Cómo son tus heces?;¿Kunjamsa heces ukanakamax utji?;¿Imaynataq hecesniykikuna?;sintomas;TRUE;TRUE;borrador
+PHR-0080;sintomas;digestivo;pregunta;¿Has tenido ganas de vomitar?;¿Waq’aqiñax purtamti?;¿Vomitayta munarqankichu?;sintomas;TRUE;TRUE;borrador
+PHR-0081;sintomas;digestivo;pregunta;¿Cuántas veces al día has vomitado?;¿Qawqhakutis urunx waq’aqsta?;¿Hayka kutitataq sapa punchaw aqturqanki?;sintomas;TRUE;TRUE;borrador
+PHR-0082;sintomas;urinario;pregunta;¿Te duele al orinar?;¿Chhuxurktä ukhax ustamti?;¿Nananchu urinakuspayki?;sintomas;TRUE;TRUE;borrador
+PHR-0083;sintomas;urinario;pregunta;¿Cuántas veces al día orinas?;¿Qawqhakutis urunx chhuxurta?;¿Hayka kutitataq sapa punchaw urinanki?;sintomas;TRUE;TRUE;borrador
+PHR-0084;sintomas;urinario;pregunta;¿Tu orina tiene mal olor?;¿Chhuxumax thujsati?;¿Mana allin asnaqchu urinayki?;sintomas;TRUE;TRUE;borrador
+PHR-0085;sintomas;circulatorio;pregunta;¿Se te hinchan los pies?;¿Kayunakamax p’usunttamti?;¿Chakiykikuna punkinchu?;sintomas;TRUE;TRUE;borrador
+PHR-0086;exploracion;estado_general;pregunta;¿Cómo estás?;¿Kunjamäsktasa?;Imaynallam?;exploracion;FALSE;TRUE;borrador
+PHR-0087;exploracion;estado_general;pregunta;¿Sano?;¿K’umarakïtati?;¿Allinchu?;exploracion;TRUE;TRUE;borrador
+PHR-0088;exploracion;estado_general;pregunta;¿Bien?;¿Walikïtati?;¿Allinchu?;exploracion;TRUE;TRUE;borrador
+PHR-0089;exploracion;estado_general;pregunta;¿Enfermo?;¿Usutätati?;¿Unqusqa?;exploracion;TRUE;TRUE;borrador
+PHR-0090;exploracion;estado_general;pregunta;¿Mal?;¿Jan walïtati?;¿Mana allinchu?;exploracion;TRUE;TRUE;borrador
+PHR-0091;exploracion;localizacion_dolor;instruccion;Muéstrame donde te duele;Kawkhitas ustam ukawj uñicht’ayita;Maypi nanasqanmanta qawachiway;exploracion;FALSE;TRUE;borrador
+PHR-0092;exploracion;respuesta_dolor;instruccion;Dime si te duele cuando oprimo aquí;Akawj limt’ksmä ukhax ustamti;Willaway kaypi ñit’ispa nanawanchu icha manachu;exploracion;TRUE;TRUE;borrador
+PHR-0093;laboratorio;general;termino;Laboratorio;Uñacht'awi utañani;Yachay wasicha;laboratorio;TRUE;FALSE;borrador
+PHR-0094;laboratorio;general;termino;Análisis;Uñt'awi;Yachaykamay;laboratorio;TRUE;FALSE;borrador
+PHR-0095;laboratorio;general;termino;Muestra;Uñt'ayawi;Rikch'ay;laboratorio;TRUE;FALSE;borrador
+PHR-0096;laboratorio;muestras;termino;Sangre;Wilani;Yawar;laboratorio;FALSE;FALSE;borrador
+PHR-0097;laboratorio;muestras;termino;Orina;Ch'iwa;Urinay;laboratorio;TRUE;FALSE;borrador
+PHR-0098;laboratorio;general;termino;Resultado;Uñt'awi jakhthapiwi;Rikhuchikuy;laboratorio;TRUE;FALSE;borrador
+PHR-0099;laboratorio;personal;termino;Paciente;Qullqa jaqi;Hampiq runa;laboratorio;TRUE;FALSE;borrador
+PHR-0100;laboratorio;personal;termino;Médico;Qulliri;Hampiq;laboratorio;FALSE;FALSE;borrador
+PHR-0101;laboratorio;procedimientos;termino;Inyección;Qulli imantaña;Ruq'i hampi;laboratorio;TRUE;FALSE;borrador
+PHR-0102;laboratorio;preparacion;termino;Ayuno;Mank'añ thakhi;Manchariy;laboratorio;TRUE;FALSE;borrador
+PHR-0103;laboratorio;recepcion;instruccion;Debe venir en ayunas;Mank'añ thakhi jutama;Manchariywan hamuy;laboratorio;TRUE;TRUE;borrador
+PHR-0104;laboratorio;recepcion;instruccion;Tome asiento, por favor;Asiento katuqama;Mayllanapaq tiyay;laboratorio;TRUE;TRUE;borrador
+PHR-0105;laboratorio;procedimiento;instruccion;Le tomaremos una muestra de sangre;Wilani uñt'ayawi apt'añani;Yawar rikch'ay apachikuy;laboratorio;TRUE;TRUE;borrador
+PHR-0106;laboratorio;resultados;instruccion;Su resultado estará listo mañana;Uñt'awi jakhthapiwi qharu utjani;Rikhuchikuy paqarinmi kachkan;laboratorio;TRUE;TRUE;borrador
+PHR-0107;laboratorio;espera;instruccion;Espere un momento, por favor;Mä jach'a k'uchu suyt'ama;Suyaykuy huk ratuchalla;laboratorio;TRUE;TRUE;borrador
+PHR-0108;farmacia;general;termino;Medicamento;Qulliri;Hampiq kamayuq;farmacia;TRUE;FALSE;borrador
+PHR-0109;farmacia;medicamentos;termino;Pastilla;Qullqi phillipsita;Ruphachaq pilluta;farmacia;TRUE;FALSE;borrador
+PHR-0110;farmacia;medicamentos;termino;Jarabe;Qullqi umami;Nawi hampi;farmacia;TRUE;FALSE;borrador
+PHR-0111;farmacia;general;termino;Receta;Qulliri qillqaña;Hampiq qillqa;farmacia;FALSE;FALSE;borrador
+PHR-0112;farmacia;dosis;termino;Dosis;Juk'ampi apnaqaña;Chaniy;farmacia;TRUE;FALSE;borrador
+PHR-0113;farmacia;paciente;termino;Adulto;Jach'a jaqi;Hatun runa;farmacia;FALSE;FALSE;borrador
+PHR-0114;farmacia;paciente;termino;Niño;Wawa;Wawa;farmacia;FALSE;FALSE;borrador
+PHR-0115;farmacia;paciente;termino;Embarazada;Uta ususi;Warmincha;farmacia;TRUE;FALSE;borrador
+PHR-0116;farmacia;general;termino;Enfermedad;Usuta;Unquy;farmacia;FALSE;FALSE;borrador
+PHR-0117;farmacia;sintomas;termino;Dolor;Llaquisiña;Nanay;farmacia;TRUE;FALSE;borrador
+PHR-0118;farmacia;dosis;termino;Horario;Pachanaka;Pacha rimanakuy;farmacia;TRUE;FALSE;borrador
+PHR-0119;farmacia;receta;pregunta;¿Tiene receta médica?;¿Qulliri qillqaña utjiti?;¿Hampiq qillqa kanchu?;farmacia;TRUE;TRUE;borrador
+PHR-0120;farmacia;dosis;instruccion;Tome este medicamento dos veces al día;Aka qulliri pä kutwa uru saraqama;Kay hampita iskay kuti punchawpi mikuy;farmacia;TRUE;TRUE;borrador
+PHR-0121;farmacia;dosis;instruccion;No exceda la dosis;Janiwa juk'ampi apnaqañati;Ama chaniyta aswan apamuychu;farmacia;FALSE;TRUE;borrador
+PHR-0122;farmacia;uso_medicamento;instruccion;Este jarabe es para la tos;Aka qullqi umampi khachaqtaki;Kay nawi hampi qhachariqpaqmi;farmacia;TRUE;TRUE;borrador
+PHR-0123;farmacia;administracion;instruccion;Debe tomar con comida;Mank'añampi apnaqama;Mikhuywan hukllachaspa mikuy;farmacia;TRUE;TRUE;borrador
+PHR-0124;tratamiento;administracion;instruccion;Este medicamento tienes que tomar;Aka qulla umañamawa;Kay hampita upyanayki tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0125;tratamiento;administracion;instruccion;Este medicamento tienes que tragar;Aka qulla mallantañamawa;Kay hampita millp’unayki tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0126;tratamiento;dosis_diaria;instruccion;Al despertar, dos píldoras;Alwa sartasax pä pildor umantäta;Rikcharispaykiqa iskay pastilla millp'unki;tratamiento;TRUE;TRUE;borrador
+PHR-0127;tratamiento;dosis_diaria;instruccion;Al mediodía, antes de comer, dos píldoras;Chikürux janïr manq’kasax pä pildor umantäta;Chawpi punchaw manaraq mikuchkaspa iskay pastilla millp'uqmi kanki;tratamiento;TRUE;TRUE;borrador
+PHR-0128;tratamiento;dosis_diaria;instruccion;En la noche, dos píldoras;Arumax pä pildor umantäta;Tutapi iskay pastilla millp'unki;tratamiento;TRUE;TRUE;borrador
+PHR-0129;tratamiento;anticonceptivos;pregunta;¿Sabes qué son las píldoras anticonceptivas?;¿Píldoras anticonceptivas sat qullanak uñt’tati?;¿Yachankichu ima pastillakuna kasqanmanta?;tratamiento;TRUE;TRUE;borrador
+PHR-0130;tratamiento;anticonceptivos;respuesta;Son muy efectivas para evitar el embarazo;Jan wawanïñatak wali askiwa;Chaykunaqa ancha allinmi mana wiksayakuypi;tratamiento;TRUE;TRUE;borrador
+PHR-0131;tratamiento;dosis;instruccion;Debes tomar una píldora cada día a la misma hora;Sapüruw mä pildor pachpa urasar umañamawa;Sapa punchawmi huk pastillata huk kutillapi upyanayki;tratamiento;TRUE;TRUE;borrador
+PHR-0132;tratamiento;anticonceptivos;pregunta;¿Conoces los anticonceptivos inyectables?;¿Inyección anticonceptivos sat qullanak uñt’tati?;¿Reqsinkichu inyectable anticonceptivos nisqakunata?;tratamiento;TRUE;TRUE;borrador
+PHR-0133;tratamiento;anticonceptivos;respuesta;Son muy efectivas para evitar el embarazo;Jan wawanïñatak wali kusanakawa;Chaykunaqa ancha allinmi mana wiksayakuypi;tratamiento;TRUE;TRUE;borrador
+PHR-0134;tratamiento;informacion;respuesta;Existen dos clases;Pä kastaw utji;Iskay clase kan;tratamiento;TRUE;TRUE;borrador
+PHR-0135;tratamiento;administracion;instruccion;Este medicamento es para inyectar;Kaya inje lurañataki;Kay hampiqa inyeccionpaqmi;tratamiento;TRUE;TRUE;borrador
+PHR-0136;tratamiento;administracion;instruccion;El jarabe;Uka jarawi;Mullp’una hampi;tratamiento;TRUE;TRUE;borrador
+PHR-0137;tratamiento;frecuencia;instruccion;Una vez al día;Mä kuti urunxa;Punchawpi chulla kutita;tratamiento;FALSE;TRUE;borrador
+PHR-0138;tratamiento;frecuencia;instruccion;Dos veces al día;Sapa uru pä kutiwa;Iskay kuti sapa punchaw;tratamiento;FALSE;TRUE;borrador
+PHR-0139;tratamiento;frecuencia;instruccion;Tres veces al día;Kimsa kuti urunxa;Punchawpi kimsa kutita;tratamiento;FALSE;TRUE;borrador
+PHR-0140;tratamiento;frecuencia;instruccion;Cuatro veces al día;Pusi kuti urunxa;Tawa kutita sapa punchaw;tratamiento;FALSE;TRUE;borrador
+PHR-0141;tratamiento;frecuencia;instruccion;Cada 12 horas;Sapa 12 pachanakawa;Sapa 12 horasmanta;tratamiento;FALSE;TRUE;borrador
+PHR-0142;tratamiento;frecuencia;instruccion;Cada 8 horas;Sapa 8 pachanakawa;Sapa 8 horasmanta;tratamiento;FALSE;TRUE;borrador
+PHR-0143;tratamiento;frecuencia;instruccion;Cada 6 horas;Cada 6 horas;Sapa 6 horasmanta;tratamiento;TRUE;TRUE;borrador
+PHR-0144;tratamiento;momento_dia;instruccion;Por la mañana;Alwaxa;Tutayllamanta;tratamiento;TRUE;TRUE;borrador
+PHR-0145;tratamiento;momento_dia;instruccion;Por la noche;Arumanakaxa;Tutanpi;tratamiento;TRUE;TRUE;borrador
+PHR-0146;tratamiento;momento_dia;instruccion;Por la tarde;Tarde urunxa;Tardeta;tratamiento;TRUE;TRUE;borrador
+PHR-0147;tratamiento;administracion;instruccion;Tiene que tomarlo en ayunas;Ch’usa purakaruw apsuñama;Ch’usaq wiksallata hap’inayki tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0148;tratamiento;administracion;instruccion;Tiene que tomarlo con alimentos;Manq’ampi apt’asiñamawa;Mikhunawan kuska apakunan tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0149;tratamiento;administracion;instruccion;Debe tomarlo después de comer;Manq’añ tukuyatatxa umañawa;Chay pastillata mikhunayki tiyan, upyanayki tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0150;tratamiento;administracion;instruccion;Con mucha agua;Walja umampi;Achka yakuyuq;tratamiento;TRUE;TRUE;borrador
+PHR-0151;tratamiento;uso_medicamento;instruccion;Hay que aplicar la crema en el área afectada;Uka crema ukaxa uka usuchjata chiqaru uchañawa;Qhakuruna cremawan k’iri pataman;tratamiento;TRUE;TRUE;borrador
+PHR-0152;tratamiento;uso_medicamento;instruccion;Tiene que tomar este jarabe;Aka jarawi apsuñawa;Kay jarabeta apakunayki tiyan;tratamiento;TRUE;TRUE;borrador
+PHR-0153;tratamiento;dosis;instruccion;Una cucharilla va a tomar;Ukax mä cucharadita munasini;Huk cucharadita hap’inqa;tratamiento;TRUE;TRUE;borrador
+PHR-0154;tratamiento;efectos;advertencia;El medicamento puede provocarle sueño;Uka qullax inas ikiñar puriychistam;Hampiqa puñuchisunkimanmi;tratamiento;TRUE;TRUE;borrador
+PHR-0155;tratamiento;apoyo;respuesta;No se olvide;Jan armasimti;Ama qunqaychu;tratamiento;FALSE;TRUE;borrador
+PHR-0156;tratamiento;apoyo;respuesta;No se preocupe;Jan llakisimti;Ama llakikuychu;tratamiento;FALSE;TRUE;borrador
